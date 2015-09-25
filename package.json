@@ -1,0 +1,44 @@
+{
+  "name": "formsy-react-inputs",
+  "version": "1.0.0",
+  "description": "A set of formsy-react inputs without any fancy.",
+  "main": "./release/formsy-react-inputs.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base build",
+    "release": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yesmeck/formsy-react-inputs.git"
+  },
+  "keywords": [
+    "react",
+    "formsy-react",
+    "react-form"
+  ],
+  "author": "Wei Zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yesmeck/formsy-react-inputs/issues"
+  },
+  "homepage": "https://github.com/yesmeck/formsy-react-inputs#readme",
+  "peerDependencies": {
+    "formsy-react": "0.14.x"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-jest": "^5.3.0",
+    "babel-loader": "^5.3.2",
+    "jest-cli": "^0.5.8",
+    "react": "^0.13.3",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  }
+}
