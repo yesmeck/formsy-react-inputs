@@ -8,7 +8,7 @@ A set of formsy-react inputs without any fancy.
 
 ## How to use
 
-See [example](build);
+See [example](build).
 
 ## License
 
