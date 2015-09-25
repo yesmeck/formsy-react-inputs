@@ -1,4 +1,4 @@
-# formsy-react-inputs
+# formsy-react-inputs [![Build Status](https://travis-ci.org/yesmeck/formsy-react-inputs.svg?branch=master)](https://travis-ci.org/yesmeck/formsy-react-inputs)
 
 A set of formsy-react inputs without any fancy.
 
