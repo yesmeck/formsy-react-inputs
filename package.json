@@ -21,7 +21,8 @@
   "keywords": [
     "react",
     "formsy-react",
-    "react-form"
+    "react-form",
+    "react-component"
   ],
   "author": "Wei Zhu",
   "license": "MIT",
