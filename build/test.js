@@ -14,7 +14,7 @@ class MyForm extends Component {
           <Input type="text" name="name" />
         </p>
         <p>
-          <RadioGroup name="fruit" selectedValue="apple">
+          <RadioGroup name="fruit" defaultValue="apple">
             {Radio => (
               <div>
                 <Radio value="apple" />Apple

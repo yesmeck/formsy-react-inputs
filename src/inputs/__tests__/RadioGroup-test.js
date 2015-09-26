@@ -5,7 +5,7 @@ describe('RadioGroup', function() {
     var React = require('react/addons');
     var RadioGroup = require('../RadioGroup.js');
     var radioGroup = (
-      <RadioGroup name="fruit" selectedValue="apple">
+      <RadioGroup name="fruit" defaultValue="apple">
         {Radio => (
           <div>
             <Radio value="apple" />Apple
