@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from 'formsy-react';
-import { Input, Select, Textarea } from '../src';
+import { Input, Select, Textarea, RadioGroup } from '../src';
 
 class MyForm extends Component {
   submit(model) {
@@ -9,9 +9,20 @@ class MyForm extends Component {
 
   render() {
     return (
-      <Form onValidSubmit={this.submit}>
+      <Form onValidSubmit={::this.submit}>
         <p>
           <Input type="text" name="name" />
+        </p>
+        <p>
+          <RadioGroup name="fruit" selectedValue="apple">
+            {Radio => (
+              <div>
+                <Radio value="apple" />Apple
+                <Radio value="orange" />Orange
+                <Radio value="watermelon" />Watermelon
+              </div>
+            )}
+          </RadioGroup>
         </p>
         <p>
           <Select name="gender">
