@@ -1,22 +1,21 @@
-var React = require('react');
-var Formsy = require('formsy-react');
+import React, { Component, PropTypes } from 'react';
+import Formsy from 'formsy-react';
+import reactMixin from 'react-mixin';
 
-var Textarea = React.createClass({
-  mixins: [Formsy.Mixin],
+export default
+@reactMixin.decorate(Formsy.Mixin)
+class Textarea extends Component {
+  static propTypes =  {
+    name: PropTypes.string.isRequired
+  }
 
-  propTypes: {
-    name: React.PropTypes.string.isRequired
-  },
-
-  changeValue: function (event) {
+  changeValue(event) {
     this.setValue(event.currentTarget.value);
-  },
+  }
 
-  render: function () {
+  render() {
     return (
-      <textarea {...this.props} onChange={this.changeValue} value={this.getValue()} />
+      <textarea {...this.props} onChange={::this.changeValue} value={this.getValue()} />
     );
   }
-});
-
-module.exports = Textarea;
+}

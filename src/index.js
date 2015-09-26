@@ -1,6 +1,11 @@
-module.exports = {
-  Input: require('./inputs/Input'),
-  Textarea: require('./inputs/Textarea'),
-  Select: require('./inputs/Select'),
-  RadioGroup: require('./inputs/RadioGroup')
+import Input from './inputs/Input';
+import Textarea from './inputs/Textarea';
+import Select from './inputs/Select';
+import RadioGroup from './inputs/RadioGroup';
+
+export default {
+  Input: Input,
+  Textarea: Textarea,
+  Select: Select,
+  RadioGroup: RadioGroup
 }

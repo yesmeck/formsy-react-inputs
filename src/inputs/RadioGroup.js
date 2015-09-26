@@ -1,5 +1,6 @@
-var React = require('react');
-var Formsy = require('formsy-react');
+import React, { Component, PropTypes } from 'react';
+import Formsy from 'formsy-react';
+import reactMixin from 'react-mixin';
 
 function radio(name, selectedValue, onChange) {
   return React.createClass({
@@ -16,29 +17,27 @@ function radio(name, selectedValue, onChange) {
   });
 }
 
-var RadioGroup = React.createClass({
-  mixins: [Formsy.Mixin],
-
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    selectedValue: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number,
-      React.PropTypes.bool,
+export default
+@reactMixin.decorate(Formsy.Mixin)
+class RadioGroup extends Component {
+  static propTypes =  {
+    name: PropTypes.string.isRequired,
+    selectedValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
     ]),
     children: React.PropTypes.func.isRequired,
-  },
+  }
 
-  changeValue: function(event) {
+  changeValue(event) {
     this.setValue(event.currentTarget.value);
-  },
+  }
 
-  render: function () {
+  render() {
     const { name, onChange, children } = this.props;
     var selectedValue = this.getValue() || this.props.selectedValue;
-    const renderedChildren = children(radio(name, selectedValue, this.changeValue));
+    const renderedChildren = children(radio(name, selectedValue, ::this.changeValue));
     return renderedChildren && React.Children.only(renderedChildren);
   }
-});
-
-module.exports = RadioGroup;
+}

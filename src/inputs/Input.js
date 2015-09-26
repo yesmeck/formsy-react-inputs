@@ -1,23 +1,23 @@
-var React = require('react');
-var Formsy = require('formsy-react');
+import React, { Component, PropTypes } from 'react';
+import Formsy from 'formsy-react';
+import reactMixin from 'react-mixin';
 
-var Input = React.createClass({
-  mixins: [Formsy.Mixin],
+export default
+@reactMixin.decorate(Formsy.Mixin)
+class Input extends Component {
 
-  propTypes: {
-    type: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired
-  },
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }
 
-  changeValue: function (event) {
+  changeValue(event) {
     this.setValue(event.currentTarget.value);
-  },
+  }
 
-  render: function () {
+  render() {
     return (
-      <input {...this.props} onChange={this.changeValue} value={this.getValue()} />
+      <input {...this.props} onChange={::this.changeValue} value={this.getValue()} />
     );
   }
-});
-
-module.exports = Input;
+}
