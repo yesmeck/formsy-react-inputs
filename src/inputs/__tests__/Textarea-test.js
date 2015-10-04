@@ -3,7 +3,7 @@ jest.dontMock('fbjs/lib/keyMirror');
 
 describe('Textarea', function() {
   it('render a textarea', function() {
-    var React = require('react/addons');
+    var React = require('react');
     var ReactDOM = require('react-dom/server');
     var Textarea = require('../Textarea');
     var textarea = <Textarea name="name" />

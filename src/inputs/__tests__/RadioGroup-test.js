@@ -3,7 +3,7 @@ jest.dontMock('fbjs/lib/keyMirror');
 
 describe('RadioGroup', function() {
   it('render a radio group', function() {
-    var React = require('react/addons');
+    var React = require('react');
     var ReactDOM = require('react-dom/server');
     var RadioGroup = require('../RadioGroup.js');
     var radioGroup = (

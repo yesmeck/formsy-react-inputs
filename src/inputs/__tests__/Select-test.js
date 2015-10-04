@@ -3,7 +3,7 @@ jest.dontMock('fbjs/lib/keyMirror');
 
 describe('Select', function() {
   it('render a select', function() {
-    var React = require('react/addons');
+    var React = require('react');
     var ReactDOM = require('react-dom/server');
     var Select = require('../Select');
     var select = (
