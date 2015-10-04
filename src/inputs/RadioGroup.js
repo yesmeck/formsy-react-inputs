@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Formsy from 'formsy-react';
 import reactMixin from 'react-mixin';
+import changable from './changable';
 
 function radio(name, defaultValue, onChange) {
   return React.createClass({
@@ -17,8 +18,9 @@ function radio(name, defaultValue, onChange) {
   });
 }
 
-export default
 @reactMixin.decorate(Formsy.Mixin)
+@changable
+export default
 class RadioGroup extends Component {
   static propTypes =  {
     name: PropTypes.string.isRequired,
@@ -28,10 +30,6 @@ class RadioGroup extends Component {
       PropTypes.bool,
     ]),
     children: React.PropTypes.func.isRequired,
-  }
-
-  changeValue(event) {
-    this.setValue(event.currentTarget.value);
   }
 
   componentDidMount() {

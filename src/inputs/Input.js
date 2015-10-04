@@ -1,18 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import Formsy from 'formsy-react';
 import reactMixin from 'react-mixin';
+import changable from './changable';
 
-export default
 @reactMixin.decorate(Formsy.Mixin)
+@changable
+export default
 class Input extends Component {
-
   static propTypes = {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
-  }
-
-  changeValue(event) {
-    this.setValue(event.currentTarget.value);
   }
 
   render() {

@@ -1,4 +1,5 @@
 jest.dontMock('../Input');
+jest.dontMock('../changable');
 jest.dontMock('fbjs/lib/keyMirror');
 
 describe('Input', function() {

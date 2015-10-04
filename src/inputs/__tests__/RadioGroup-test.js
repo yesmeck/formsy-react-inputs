@@ -1,4 +1,5 @@
 jest.dontMock('../RadioGroup');
+jest.dontMock('../changable');
 jest.dontMock('fbjs/lib/keyMirror');
 
 describe('RadioGroup', function() {
