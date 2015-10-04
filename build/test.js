@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Form } from 'formsy-react';
 import { Input, Select, Textarea, RadioGroup } from '../src';
+
+const styles = {
+  formGroup: {
+    margin: '10px'
+  }
+}
 
 class MyForm extends Component {
   submit(model) {
@@ -10,10 +17,10 @@ class MyForm extends Component {
   render() {
     return (
       <Form onValidSubmit={::this.submit}>
-        <p>
+        <div style={styles.formGroup}>
           <Input type="text" name="name" />
-        </p>
-        <p>
+        </div>
+        <div style={styles.formGroup}>
           <RadioGroup name="fruit" defaultValue="apple">
             {Radio => (
               <div>
@@ -23,21 +30,23 @@ class MyForm extends Component {
               </div>
             )}
           </RadioGroup>
-        </p>
-        <p>
+        </div>
+        <div style={styles.formGroup}>
           <Select name="gender">
             <option value></option>
             <option value="m">Male</option>
             <option value="f">Female</option>
           </Select>
-        </p>
-        <p>
+        </div>
+        <div style={styles.formGroup}>
           <Textarea name="bio"></Textarea>
-        </p>
-        <button type="submit">Submit</button>
+        </div>
+        <div style={styles.formGroup}>
+          <button type="submit">Submit</button>
+        </div>
       </Form>
     );
   }
 }
 
-React.render(<MyForm />, document.getElementById('app'));
+ReactDOM.render(<MyForm />, document.getElementById('app'));
