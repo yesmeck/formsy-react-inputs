@@ -6,7 +6,7 @@ describe('Select', function() {
   it('render a select', function() {
     var React = require('react');
     var ReactDOM = require('react-dom/server');
-    var Select = require('../Select');
+    var Select = require('../Select').default;
     var select = (
       <Select name="name">
         <option value="1">One</option>

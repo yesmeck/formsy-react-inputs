@@ -6,7 +6,7 @@ describe('RadioGroup', function() {
   it('render a radio group', function() {
     var React = require('react');
     var ReactDOM = require('react-dom/server');
-    var RadioGroup = require('../RadioGroup.js');
+    var RadioGroup = require('../RadioGroup.js').default;
     var radioGroup = (
       <RadioGroup name="fruit" defaultValue="apple">
         {Radio => (
@@ -20,6 +20,6 @@ describe('RadioGroup', function() {
     )
     var markup = ReactDOM.renderToStaticMarkup(radioGroup);
 
-    expect(markup).toEqual('<div><input value="apple" type="radio" name="fruit" checked=""/>Apple<input value="orange" type="radio" name="fruit"/>Orange<input value="watermelon" type="radio" name="fruit"/>Watermelon</div>');
+    expect(markup).toEqual('<div><input type="radio" value="apple" name="fruit" checked=""/>Apple<input type="radio" value="orange" name="fruit"/>Orange<input type="radio" value="watermelon" name="fruit"/>Watermelon</div>');
   });
 });

@@ -6,7 +6,7 @@ describe('Input', function() {
   it('render a input', function() {
     var React = require('react');
     var ReactDOM = require('react-dom/server');
-    var Input = require('../Input');
+    var Input = require('../Input').default;
     var input = <Input type="text" name="name" />
     var markup = ReactDOM.renderToStaticMarkup(input);
 
